@@ -1,0 +1,250 @@
+{:templates {:alfred "osascript -e 'tell application \"Alfred 3\" to run trigger \"%s\" in workflow \"%s\" with argument \"\"'"
+             :km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'"}
+ :simlayers {:semicolon-mode {:key :semicolon}
+             :1-mode {:key :1}
+             :2-mode {:key :2}
+             :3-mode {:key :3}
+             :q-mode {:key :q}
+             :w-mode {:key :w}
+             :e-mode {:key :e}
+             :r-mode {:key :r}
+             :t-mode {:key :t}
+             :u-mode {:key :u}
+             :i-mode {:key :i}
+             :o-mode {:key :o}
+             :p-mode {:key :p}
+             :a-mode {:key :a}
+             :s-mode {:key :s}
+             :d-mode {:key :d}
+             :f-mode {:key :f}
+             :g-mode {:key :g}
+             :z-mode {:key :z}
+             :x-mode {:key :x}
+             :c-mode {:key :c}
+             :v-mode {:key :v}
+             :b-mode {:key :b}
+             :n-mode {:key :n}
+             :m-mode {:key :m}
+             :spacebar-mode {:key :spacebar}
+             :backquote-mode {:key :grave_accent_and_tilde}
+             :tab-mode {:key :tab}
+             :comma-mode {:key :comma}
+             :jsdot-mode {:key :period}
+             ;:godot-mode {:key :period}
+             ;:pydot-mode {:key :period}
+             :caps-mode {:key :caps_lock}}
+ :main [{:des "qkey (cmd + shift)"
+         :rules [:q-mode
+                 [:open_bracket :!CSopen_bracket]
+                 [:spacebar :!CT7]
+                 [:close_bracket :!CSclose_bracket]
+                 [:semicolon :!CSsemicolon]
+                 [:quote :!CSquote]
+                 [:comma :!CScomma]
+                 [:period :!CSperiod]
+                 [:slash :!CSslash]
+                 [:a :!CSa]
+                 [:b :!CSb]
+                 [:c :!CSc]
+                 [:d :!CSd]
+                 [:e :!CSe]
+                 [:f :!CSf]
+                 [:g :!CSg]
+                 [:h :!CSh]
+                 [:i :!CSi]
+                 [:j :!CSj]
+                 [:k :!CSk]
+                 [:l :!CSl]
+                 [:m :!CSm]
+                 [:n :!CSn]
+                 [:o :!CSo]
+                 [:p :!CSp]
+                 [:r :!CSr]
+                 [:s :!CSs]
+                 [:t :!CSt]
+                 [:u :!CSu]
+                 [:v :!CSv]
+                 [:w :!CSw]
+                 [:x :!CSx]
+                 [:y :!CSy]
+                 [:z :!CSz]
+                 [:1 :!CS1]
+                 [:2 :!CS2]
+                 [:3 :!CS3]
+                 [:4 :!CS4]
+                 [:5 :!CS5]
+                 [:6 :!CS6]
+                 [:7 :!CS7]
+                 [:8 :!CS8]
+                 [:9 :!CS9]
+                 [:0 :!CS0]
+                 [:spacebar :!TOSx]]}
+        {:des "wkey (apps)"
+         :rules [:w-mode
+                 [:k [:km "open: Safari"]]
+                 [:u [:km "open: Activity Monitor"]]
+                 [:i [:km "open: Chrome Canary"]]
+                 [:t [:km "open: Trello"]]
+                 [:v [:km "open: Spotify"]]
+                 [:spacebar :!CSO7] ; Search selection with Google Lucky search
+                 [:h [:km "open: Bee"]]
+                 [:caps_lock [:km "open: Finder"]]
+                 [:m [:km "open: Tower"]]
+                 [:b [:km "open: BetterTouchTool"]]
+                 [:r [:km "open: Fantastical"]]
+                 [:e :!OSC1] ; Open Dash 
+                 [:semicolon [:km "open: Xcode"]]
+                 [:period [:km "open: Paw"]]
+                 [:g [:km "open: Chrome"]]
+                 [:f [:km "open: 2do"]]
+                 [:j [:km "open: iTerm"]]
+                 [:n [:km "open: Sublime Text"]]
+                 [:l [:km "open: VS Code"]]
+                 [:o [:km "open: Keyboard Maestro"]]]}
+        {:des "skey (essential)"
+         :rules [:s-mode
+                 [:e :tab]
+                 [:r :!Stab]
+                 [:i :!Tspacebar]
+                 [:o :!CTO9]
+                 [:a :!Cc]
+                 [:v :left_shift]
+                 [:quote [:!Cleft_arrow :!CSright_arrow]] ; highlight current line 
+                 [:w [:!Oleft_arrow :!OSright_arrow]] ; highlight word
+                 [:d :delete_or_backspace]
+                 [:f :return_or_enter]
+                 [:c :!Cdelete_or_backspace]
+                 [:g :!Ctab]
+                 [:##h :left_arrow]
+                 [:##j :down_arrow]
+                 [:##k :up_arrow]
+                 [:##l :right_arrow]
+                 [:##b :!Cleft_arrow]
+                 [:n :!Cv]
+                 [:##m :!Cright_arrow]
+                 [:period [:km "Selected text -> TODO"]]
+                 [:semicolon [:km "Tasks from apps -> TODO"]]]}
+        {:des "fkey (essential)"
+         :rules [:f-mode
+                 [:e :!CO8] ; Alfred clipboard history search
+                 [:spacebar [:km "Paste selected text in previous app"]]
+                 [:semicolon [:km "open: TaskPaper"]]
+                 [:s [:km "New SnippetsLab snippet"]]
+                 ;[:w [:km "Lowercase selected text"]]
+                 ;[:q :!STh] ; Record macro
+                 [:q [:km "Go to test macro"]]
+                 [:w [:km "Test"]]
+                 [:u [:km "Add question"]]
+                 ;[:q [:km "Uppercase selected text"]]
+                 [:period [:km "edit: Karabiner"]]
+                 [:a :!CTO4] ; Alfred file action
+                 [:j [:km "Open 1st iTerm tab"]]
+                 [:h [:km "Make markdown link from selection {link}"]]
+                 [:1 [:km "Lowercase selected text"]]
+                 [:p :!CTOc] ; Sleep
+                 [:open_bracket :!CT5] ; Turn display on/off 
+                 [:q [:km "Uppercase selected text"]]
+                 [:slash [:km "edit: Darwin Nix"]]
+                 [:quote [:km "edit: vimrc"]]
+                 [:comma  [:km "Add safari link to selected markdown text"]]
+                 [:k :return_or_enter]
+                 [:z :!Ospacebar]
+                 [:l :!Creturn_or_enter]
+                 [:3 :!CTOp] ; Sip color picker 
+                 [:2 :!COclose_bracket] ; PixelSnap
+                 [:o :!Freturn_or_enter]
+                 [:i :!Sreturn_or_enter]
+                 [:n :!Treturn_or_enter]
+                 [:m :!Oreturn_or_enter]]}
+        {:des "gkey (actions)"
+         :rules [:g-mode
+                 [:q :!CO0] ; Show Dropzone dropdown
+                 [:e :!COd] ; Show/hide dock
+                 [:k :!COSf] ; Maximize window
+                 [:n :!CTOg] ; Turn on/off notifications
+                 [:w :!CSgrave_accent_and_tilde] ; Switch between active windows (go up)
+                 [:semicolon :!Cgrave_accent_and_tilde] ; Switch between active windows  (go down)
+                ;[:q :!COequal_sign]
+                 [:u :!CTO2] ; Full screen app
+                 [:i :!COslash] ; Show/hide notification centre
+                 [:j :!CT4] ; Create new Fantastical event
+                 ;[:m :!CO6] ; Maximize window to next monitor
+                 [:a [:km "Go to KM group of current app"]]
+                 [:period [:km "Go to KM group of current app from picklist"]]
+                 [:m [:km "Make global macro"]]
+                 [:l :!CSOd] ; Move window right
+                 [:h :!CSOa] ; Move window left
+                 [:o [:alfred "new task" "nikivi.todo.task"]]
+                 [:s [:km "Dismiss notifications"]]]}
+        {:des "vkey (media)"
+         :rules [:v-mode
+                 [:e [:km "Connect/disconnect AirPods"]]
+                 [:w [:km "wiki: Rules"]]
+                 [:q [:km "wiki: Month"]]
+                 [:j :mute]
+                 [:period [:km "Noizio change"]]
+                 ;[:semicolon :!TS0] ; Torn on/off Noizio
+                 [:a [:km "Clone repo to ~/src/clones"]]
+                 [:s [:km "Clone repo to ~/src/clones and open with VS Code"]]
+                 [:d [:km "Clone repo to ~/src/clones and open with Sublime Text"]]
+                 [:i :display_brightness_decrement]
+                 [:o :display_brightness_increment]
+                 [:h :vk_consumer_previous]
+                 [:l :vk_consumer_next]
+                 [:k :vk_consumer_play]
+                 [:n :volume_decrement]
+                 [:m :volume_increment]]}
+        {:des "tkey (handy actions)"
+         :rules [:t-mode
+                 [:spacebar :!COSr] ; Google Translate selected text
+                 [:s :!CTOx] ; Little Snitch
+                 [:period [:alfred "trash desktop" "nikivi.clean.folders"]]]}
+        {:des "backkey (dash)"
+         :rules [:backquote-mode
+                 [:open_bracket :!TOopen_bracket]
+                 [:close_bracket :!TOclose_bracket]
+                 [:semicolon :!TOsemicolon]
+                 [:quote :!TOquote]
+                 [:comma :!TOcomma]
+                 [:period :!TOperiod]
+                 [:slash :!TOslash]
+                 [:a :!TOa]
+                 [:b :!TOb]
+                 [:c :!TOc]
+                 [:d :!TOd]
+                 [:e :!TOe]
+                 [:f :!TOf]
+                 [:g :!TOg]
+                 [:h :!TOh]
+                 [:i :!TOi]
+                 [:j :!TOj]
+                 [:k :!TOk]
+                 [:l :!TOl]
+                 [:m :!TOm]
+                 [:n :!TOn]
+                 [:o :!TOo]
+                 [:p :!TOp]
+                 [:q :!TOq]
+                 [:r :!TOr]
+                 [:s :!TOs]
+                 [:t :!TOt]
+                 [:u :!TOu]
+                 [:v :!TOv]
+                 [:w :!TOw]
+                 [:x :!TOx]
+                 [:y :!TOy]
+                 [:z :!TOz]]}
+        {:des "spacekey (top sites)"
+         :rules [:spacebar-mode
+                 [:n [:km "w: GitHub notifications"]]
+                 [:i [:km "w: Localhost"]]
+                 [:k [:km "w: GitHub"]]
+                 [:a [:km "w: Google"]]
+                 [:e [:km "w: Medium"]]
+                 [:f [:km "w: Confluence"]]
+                 [:j [:km "w: YouTube"]]
+                 [:r [:km "w: Jira"]]
+                 [:b [:km "w: Bitbucket"]]
+                 [:l [:km "w: CodeSandbox"]]
+                 [:o [:km "w: regex101"]]
+                 [:semicolon [:km "w: Stack Overflow"]]]}]}
